@@ -17,10 +17,10 @@ try {
     
     $stmt->execute([':n' => $nombre,':d' => $descripcion]);
 
-} catch(PDOException $error){
+} catch(PDOException $e){
 
     http_response_code(500);
-    error_log($error->getMessage());
+    error_log($e->getMessage());
     echo json_encode(['error' => 'Error al crear la rutina.']);
     exit;
 }
