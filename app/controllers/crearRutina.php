@@ -14,7 +14,8 @@ try {
         exit;
     }
 
-    Rutinas::crear($nombre,$descripcion);
+    $crear = new Rutinas($conexion);
+    $crear -> crear($nombre,$descripcion);
 
 } catch(PDOException $e){
 

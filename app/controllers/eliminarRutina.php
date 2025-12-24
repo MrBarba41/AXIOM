@@ -1,14 +1,13 @@
 <?php 
 
 require_once __DIR__ . '/../models/db.php';
+require_once __DIR__ . '/../models/rutinas.php';
 $conexion = new DB() -> conexion();
 
 try {
 
-    
-    $stmt = $conexion -> prepare('DELETE FROM `rutinas` WHERE id = (:i)');
-    
-    $stmt->execute([':i' => $id]);
+    $eliminar = new Rutinas($conexion);
+    $eliminar -> eliminar($id);
 
 } catch (PDOException $e){
 
