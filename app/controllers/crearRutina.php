@@ -1,6 +1,7 @@
 <?php 
     require_once __DIR__ . '/../models/db.php';
-    $conexion = new DB()->conexion();
+    require_once __DIR__ . '/../models/rutinas.php';
+    $conexion = new DB() -> conexion();
 
 try {
 
@@ -13,9 +14,7 @@ try {
         exit;
     }
 
-    $stmt = $conexion->prepare('INSERT INTO `rutinas` (`nombre`,`descripcion`) VALUES (:n , :d)');
-    
-    $stmt->execute([':n' => $nombre,':d' => $descripcion]);
+    Rutinas::crear($nombre,$descripcion);
 
 } catch(PDOException $e){
 
