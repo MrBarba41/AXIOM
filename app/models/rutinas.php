@@ -10,6 +10,15 @@ class Rutinas {
         $this->conexion = $conexion;
     }
 
+
+    public function consultar(){
+
+        $stmt = $this -> conexion -> prepare('SELECT * FROM `rutinas`');
+        return $stmt -> execute();
+        
+    }
+
+
     public function crear($nombre,$descripcion){
 
         $stmt = $this -> conexion -> prepare('INSERT INTO `rutinas` (`nombre`,`descripcion`) VALUES (:n , :d)');
