@@ -12,7 +12,9 @@
         <h2>Bienvenido</h2>
     </header>
     <main>
-
+        <form action="/app/views/formCrearRutina.php" method="post">
+            <button name="crearRutina">Crear Rutina</button>
+        </form>
     </main>
     <footer>
         
